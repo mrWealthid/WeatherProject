@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="get(1)">Wealth</button>
+    <button onclick="get(2)">chika</button>
+    <button onclick="get(3)">Relationship</button>
+
+    <div class="container">
+      <div class="name"></div>
+
+      <div class="desc"></div>
+
+      <div class="age"></div>
+    </div>
+
+    <script>
+      const truth = [
+        {
+          name: "Wealth",
+          desc: "Greatly Anionted",
+          age: 28,
+          id: 1,
+        },
+        {
+          name: "Chika",
+          desc: "Greatly Anionted",
+          age: 27,
+          id: 2,
+        },
+
+        {
+          name: "Relationship",
+          desc: "Greatly Anionted",
+          age: 6,
+          id: 3,
+        },
+      ];
+
+      const get = (id) => {
+        const check = truth.find((element) => element.id === id);
+
+        document.querySelector(".name").innerHTML = check.name;
+        document.querySelector(".desc").innerHTML = check.desc;
+        document.querySelector(".age").innerHTML = check.age;
+      };
+
+      // decagon's algorithm question
+
+      function flows(arr, value) {
+        const gamesa = arr.map(
+          (element) =>
+            element.slice(0, 4) + (parseInt(element.slice(4)) + value)
+        );
+
+        return gamesa;
+      }
+
+      flows(["val:2", "val:3", "val:5"], 2);
+
+      //   fetch(
+      //     "http://api.openweathermap.org/data/2.5/weather?q=london&appid=52e5cf2412ccca39bff6dde69153bb8c"
+      //   )
+      //     .then((res) => res.json())
+      //     .then((data) => console.log(data));
+
+    //   making an api call
+    //   const flow = async () => {
+    //     const response = await fetch(
+    //       "http://api.openweathermap.org/data/2.5/weather?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c"
+    //     );
+    //     const data = response.json();
+    //     console.log(data);
+    //   };
+
+      flow();
+    </script>
+  </body>
+</html>

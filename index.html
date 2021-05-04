@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header">
+          <h1>My Weather Channel</h1>
+          Weather Data From Weather Underground API
+        </div>
+
+        <div class="header">
+          <img src="images/weatherLogo.png" alt="weatherLogo" />
+        </div>
+      </header>
+      <main>
+        <section>
+          <div class="current">
+            <div id="name"></div>
+            <div id="desc"></div>
+            <div id="temp">00</div>
+
+            <div id="humidity"></div>
+          </div>
+
+          <div class="forecast">
+            <p>Weather Forecast For Every 5 Hours</p>
+
+            <div>
+              <span id="r1c1"></span>
+              <span id="r1c2">&bull;</span>
+              <span id="r1c3"></span>
+              <span id="r1c4"></span>
+            </div>
+
+            <div>
+              <span id="r2c1"></span>
+              <span id="r2c2">&bull;</span>
+              <span id="r2c3"></span>
+              <span id="r2c4"></span>
+            </div>
+
+            <div>
+              <span id="r3c1"></span>
+              <span id="r3c2">&bull;</span>
+              <span id="r3c3"></span>
+              <span id="r3c4"></span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        &copy;Coded & Designed By Wealth Iduwe
+      </footer>
+    </div>
+
+    <script src="weather.js"></script>
+  </body>
+</html>

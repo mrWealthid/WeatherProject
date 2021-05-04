@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Caudex&family=Darker+Grotesque&family=Gruppo&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Caudex";
+}
+.wrapper {
+  display: flex;
+  margin: 60px auto;
+  width: 90%;
+  background-color: wheat;
+  flex-direction: column;
+}
+
+header {
+  background-color: cadetblue;
+  padding: 10px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Gruppo", cursive;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 50vw 35vw;
+  color: gray;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.current {
+  text-align: center;
+  text-transform: capitalize;
+  color: black;
+}
+#temp {
+  font-size: 80px;
+}
+
+.forecast div {
+  border-bottom: 1px solid grey;
+}
+
+.forecast p {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+#r1c2,
+#r2c2,
+#r3c2 {
+  color: black;
+}
+#name {
+  font-weight: 600;
+  font-size: x-large;
+}
+span {
+  margin-right: 40px;
+}
+footer {
+  background-color: cadetblue;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    width: 100%;
+    margin: 0px;
+  }
+
+  main {
+    height: 100vh;
+  }
+  section {
+    grid-template-columns: auto;
+    grid-row-gap: 125px;
+    justify-content: center;
+  }
+}
