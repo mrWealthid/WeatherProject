@@ -2,10 +2,11 @@
 
 // Current Weather API
 const currentWeather =
-  "//api.openweathermap.org/data/2.5/weather?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
+  "https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
 const weather = async () => {
   const current = await fetch(currentWeather);
   const data = await current.json();
+
   console.log(data);
 
   document.getElementById(
@@ -21,7 +22,7 @@ const weather = async () => {
 weather();
 
 const forecast =
-  "//api.openweathermap.org/data/2.5/forecast?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
+  "https://api.openweathermap.org/data/2.5/forecast?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
 const weatherForecast = async () => {
   const response = await fetch(forecast);
   const data = await response.json();
