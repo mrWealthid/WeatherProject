@@ -77,11 +77,17 @@ footer {
   }
 
   main {
-    height: 100vh;
+    height: 100%;
   }
   section {
     grid-template-columns: auto;
     grid-row-gap: 125px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  main {
+    height: 100vh;
   }
 }
