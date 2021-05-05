@@ -12,7 +12,7 @@ setInterval(showTime, 1000);
 
 // Current Weather API
 const currentWeather =
-  "https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
+  "https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c";
 const weather = async () => {
   const current = await fetch(currentWeather);
   const data = await current.json();
@@ -23,16 +23,17 @@ const weather = async () => {
     "name"
   ).innerHTML = ` ${data.name},${data.sys.country}`;
   document.getElementById("desc").innerHTML = data.weather[0].description;
-  document.getElementById("temp").innerHTML = data.main.temp;
+  document.getElementById("temp").innerHTML =
+    Math.floor(data.main.temp - 273) + "&deg;c";
   document.getElementById(
     "humidity"
-  ).innerHTML = `Relative Humidity is ${data.main.humidity}`;
+  ).innerHTML = `Relative Humidity is ${data.main.humidity}%`;
 };
 
 setTimeout(weather, 2000);
 // forecast Weather API
 const forecast =
-  "https://api.openweathermap.org/data/2.5/forecast?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
+  "https://api.openweathermap.org/data/2.5/forecast?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c";
 const weatherForecast = async () => {
   const response = await fetch(forecast);
   const data = await response.json();
@@ -44,27 +45,27 @@ const weatherForecast = async () => {
   document.getElementById("r1c1").innerHTML = dateTrim;
   document.getElementById(
     "dates"
-  ).innerHTML = `<strong>Date</strong>: ${dateTrimed}`;
+  ).innerHTML = `<strong>Today's Date</strong>: ${dateTrimed}`;
   document.getElementById("r1c3").innerHTML =
-    data.list[0].main.temp_min + "&deg;";
+    Math.floor(data.list[0].main.temp_min - 273) + "&deg;c";
   document.getElementById("r1c4").innerHTML =
-    data.list[0].main.temp_max + "&deg;";
+    Math.floor(data.list[0].main.temp_max - 273) + "&deg;c";
 
   const dates1 = data.list[1].dt_txt;
   const dateTrim1 = dates1.substring(5, 11);
   document.getElementById("r2c1").innerHTML = dateTrim1;
   document.getElementById("r2c3").innerHTML =
-    data.list[1].main.temp_min + "&deg;";
+    Math.floor(data.list[1].main.temp_min - 273) + "&deg;c";
   document.getElementById("r2c4").innerHTML =
-    data.list[1].main.temp_max + "&deg;";
+    Math.floor(data.list[1].main.temp_max - 273) + "&deg;c";
 
   const dates2 = data.list[2].dt_txt;
   const dateTrim2 = dates2.substring(5, 11);
   document.getElementById("r3c1").innerHTML = dateTrim2;
   document.getElementById("r3c3").innerHTML =
-    data.list[2].main.temp_min + "&deg;";
+    Math.floor(data.list[2].main.temp_min - 273) + "&deg;c";
   document.getElementById("r3c4").innerHTML =
-    data.list[2].main.temp_max + "&deg;";
+    Math.floor(data.list[2].main.temp_max - 273) + "&deg;c";
 };
 
 setTimeout(weatherForecast, 2000);

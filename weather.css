@@ -33,6 +33,7 @@ header {
   text-align: end;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-variant: small-caps;
+  color: grey;
 }
 section {
   display: grid;
@@ -50,6 +51,7 @@ section {
 
 #temp {
   font-size: 80px;
+  text-transform: lowercase;
 }
 
 .forecast div {
