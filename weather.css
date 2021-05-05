@@ -16,6 +16,7 @@ body {
   width: 90%;
   background-color: wheat;
   flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header {
@@ -25,8 +26,14 @@ header {
   justify-content: space-between;
   align-items: center;
   font-family: "Gruppo", cursive;
+  text-shadow: 2px 2px 3px grey;
 }
-
+.datetime {
+  margin-right: 15px;
+  text-align: end;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-variant: small-caps;
+}
 section {
   display: grid;
   grid-template-columns: 50vw 35vw;
@@ -38,7 +45,9 @@ section {
   text-align: center;
   text-transform: capitalize;
   color: black;
+  text-shadow: 2px 2px 3px grey;
 }
+
 #temp {
   font-size: 80px;
 }

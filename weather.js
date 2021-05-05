@@ -1,3 +1,13 @@
+// generating timer
+function showTime() {
+  const currentDate = new Date();
+  const dateTime = `<strong>Time</strong> : ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+
+  document.getElementById("times").innerHTML = `${dateTime}`;
+}
+
+setInterval(showTime, 1000);
+
 // Make An API Call using async await
 
 // Current Weather API
@@ -19,8 +29,8 @@ const weather = async () => {
   ).innerHTML = `Relative Humidity is ${data.main.humidity}`;
 };
 
-weather();
-
+setTimeout(weather, 2000);
+// forecast Weather API
 const forecast =
   "https://api.openweathermap.org/data/2.5/forecast?q=lagos&appid=52e5cf2412ccca39bff6dde69153bb8c&units=imperial";
 const weatherForecast = async () => {
@@ -30,7 +40,11 @@ const weatherForecast = async () => {
 
   const dates = data.list[0].dt_txt;
   const dateTrim = dates.substring(5, 11);
+  const dateTrimed = dates.substring(0, 11);
   document.getElementById("r1c1").innerHTML = dateTrim;
+  document.getElementById(
+    "dates"
+  ).innerHTML = `<strong>Date</strong>: ${dateTrimed}`;
   document.getElementById("r1c3").innerHTML =
     data.list[0].main.temp_min + "&deg;";
   document.getElementById("r1c4").innerHTML =
@@ -53,7 +67,7 @@ const weatherForecast = async () => {
     data.list[2].main.temp_max + "&deg;";
 };
 
-weatherForecast();
+setTimeout(weatherForecast, 2000);
 
 // function adds(arr, value) {
 //   const flow = arr.map(
