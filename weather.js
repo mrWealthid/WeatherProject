@@ -1,12 +1,11 @@
-// generating timer
-function showTime() {
+// Generating timer
+
+setInterval(() => {
   const currentDate = new Date();
+
   const dateTime = `<strong>Time</strong> : ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
-
   document.getElementById("times").innerHTML = `${dateTime}`;
-}
-
-setInterval(showTime, 1000);
+}, 1000);
 
 // Make An API Call using async await
 

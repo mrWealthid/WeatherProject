@@ -30,14 +30,14 @@ header {
 }
 .datetime {
   margin-right: 15px;
-  text-align: end;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-variant: small-caps;
+  float: right;
+  font-family: "Caudex", sans-serif;
+
   color: grey;
 }
 section {
   display: grid;
-  grid-template-columns: 50vw 35vw;
+  grid-template-columns: 45vw 40vw;
   color: gray;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -46,12 +46,15 @@ section {
   text-align: center;
   text-transform: capitalize;
   color: black;
-  text-shadow: 2px 2px 3px grey;
 }
 
 #temp {
   font-size: 80px;
   text-transform: lowercase;
+}
+
+.forecast {
+  margin-top: 50px;
 }
 
 .forecast div {
@@ -92,8 +95,16 @@ footer {
   }
   section {
     grid-template-columns: auto;
-    grid-row-gap: 125px;
+    grid-row-gap: 75px;
     justify-content: center;
+  }
+
+  .forecast {
+    margin-top: 20px;
+  }
+
+  .current {
+    margin-top: 20px;
   }
 }
 
